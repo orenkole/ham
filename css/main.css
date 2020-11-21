@@ -627,6 +627,14 @@ h1 {
   color: white;
 }
 
+.review-authors-list {
+  perspective: 300px;
+}
+
+.reviews-positions-list {
+  perspective: 300px;
+}
+
 .review-texts-list {
   position: relative;
   margin-bottom: 27px;
@@ -651,7 +659,7 @@ h1 {
 .enlarged-photo-item.active-item {
   display: flex;
   justify-content: center;
-  animation: showItem .8s ease-out;
+  animation: showItem .8s ease-in;
   animation-fill-mode: forwards;
   backface-visibility: hidden;
 }
@@ -662,7 +670,7 @@ h1 {
 .enlarged-photo-item.hidden-item {
   display: flex;
   justify-content: center;
-  animation: hideItem 1.5s ease-out;
+  animation: hideItem .8s ease-in;
   animation-fill-mode: forwards;
   backface-visibility: hidden;
 }
@@ -727,6 +735,7 @@ h1 {
   display: flex;
   justify-content: center;
   margin-bottom: 31px;
+  perspective: 300px;
 }
 
 .enlarged-photo-item {
@@ -765,11 +774,11 @@ h1 {
 }
 
 .slider-transition {
-  transition: transform 1s ease-in-out;
+  transition: transform .5s ease-in-out;
 }
 
 .lifted-item {
-  animation: lift 1s ease;
+  animation: lift .5s ease;
   animation-fill-mode: forwards;
 }
 
@@ -783,7 +792,7 @@ h1 {
 }
 
 .put-down {
-  animation: down 1s ease;
+  animation: down .5s ease;
   animation-fill-mode: forwards;
 }
 
