@@ -439,7 +439,9 @@ h1 {
   justify-content: center;
 }
 
-.backside-buttons button {
+.backside-buttons .backside-button-link,
+.backside-buttons .backside-button-square {
+  display: flex;
   outline: none;
   border: 1px solid #18CFAB;
   border-radius: 50%;
@@ -466,10 +468,6 @@ h1 {
 .backside-button-link:hover svg {
   fill: white;
 }
-
-
-
-
 
 .backside-button-square {
   background-color: transparent;

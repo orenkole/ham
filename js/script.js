@@ -82,11 +82,6 @@ const workImagesList = document.querySelector('.works-images-list')
 const loadMoreWorksBtn = document.getElementById('works-button')
 loadMoreWorksBtn.addEventListener('click', onPreloadWorks)
 
-
-
-
-loadMoreWorksBtn.setAttribute("data-before", "../img/icons/preloader.svg")
-
 function onPreloadWorks() {
   loadMoreWorksBtn.classList.remove("ready");
   loadMoreWorksBtn.classList.add("loading");
@@ -332,27 +327,6 @@ function showSelectedItem(classItem, dataItem) {
   selectedItem.classList.add("active-item")
 }
 
-// function showAuthor(sliderItem) {
-//   const activeAuthorListItem = document.querySelector(`.review-author-item.active-item`)
-//   const selectedAuthorListItem = document.querySelector(`.review-author-item[data-item=${sliderItem}]`)
-//   activeAuthorListItem.classList.remove("active-item")
-//   selectedAuthorListItem.classList.add("active-item")
-// }
-
-// function showAuthorPosition(sliderItem) {
-//   const activeAuthorPositionListItem = document.querySelector(`.review-position-item.active-item`)
-//   const selectedAuthorPositionListItem = document.querySelector(`.review-position-item[data-item=${sliderItem}]`)
-//   activeAuthorPositionListItem.classList.remove("active-item")
-//   selectedAuthorPositionListItem.classList.add("active-item")
-// }
-
-// function showAuthorPhoto(sliderItem) {
-//   const activeAuthorPhotoListItem = document.querySelector(`.enlarged-photo-item.active-item`)
-//   const selectedAuthorPhotoListItem = document.querySelector(`.enlarged-photo-item[data-item=${sliderItem}]`)
-//   activeAuthorPhotoListItem.classList.remove("active-item")
-//   selectedAuthorPhotoListItem.classList.add("active-item")
-// }
-
 const initialLiftedItem = document.querySelector('.slider-item[style="order: 4;"]');
 initialLiftedItem.classList.add("lifted-item")
 
@@ -428,7 +402,19 @@ let loadedGalleryImages = [];
 let lastGalleryImageIndex = 0;
 
 const loadMoreGalleryBtn = document.getElementById('gallery-button')
-loadMoreGalleryBtn.addEventListener('click', loadMoreGallery)
+loadMoreGalleryBtn.addEventListener('click', onPreloadGallery)
+
+function onPreloadGallery() {
+  loadMoreGalleryBtn.classList.remove("ready");
+  loadMoreGalleryBtn.classList.add("loading");
+  loadMoreGalleryBtn.disabled = true;
+  setTimeout(() => {
+    loadMoreGalleryBtn.classList.remove("loading");
+    loadMoreGalleryBtn.classList.add("ready");
+    loadMoreGalleryBtn.disabled = false;
+    loadMoreGallery()
+  }, 2000);
+}
 
 function loadMoreGallery() {
   const htmlFragmet = document.createDocumentFragment();
