@@ -343,21 +343,8 @@ const initialAuthorPhotoItem = document.querySelector(".enlarged-photo-item[data
 initialAuthorPhotoItem.classList.add("active-item")
 
 
+
 /* ---------------- Masonry ------------*/
-// init Masonry
-let grid = document.querySelector('.grid');
-
-let msnry = new Masonry( grid, {
-  gutter: 20,
-  itemSelector: '.grid-item',
-  columnWidth: '.grid-sizer',
-});
-
-imagesLoaded( grid ).on( 'progress', function() {
-  // layout Masonry after each image loads
-  msnry.layout();
-});
-
 
 const galleryImages = [
   {src: "img/wordpress/wordpress5.jpg", category: "wordpress", imgTitle: "notebook wordpress", alt: "notebook wordpress"},
@@ -397,6 +384,21 @@ const galleryImages = [
   {src: "img/graphic-design/graphic-design9.jpg", category: "graphic design", imgTitle: "flowers", alt: "flowers"},
   {src: "img/web-design/web-design7.jpg", category: "web design", imgTitle: "notebook and schema", alt: "notebook and schema"},
 ]
+
+
+// init Masonry
+let grid = document.querySelector('.grid');
+
+let msnry = new Masonry( grid, {
+  gutter: 20,
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-sizer',
+});
+
+imagesLoaded( grid ).on( 'progress', function() {
+  // layout Masonry after each image loads
+  msnry.layout();
+});
 
 let loadedGalleryImages = [];
 let lastGalleryImageIndex = 0;

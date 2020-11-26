@@ -99,12 +99,12 @@ nav {
   margin-left: 25px;
   transition: color .2s, border-bottom-color .2s;
   padding-bottom: 47px;
+  border-bottom: 2px solid;
   border-bottom-color: transparent;
 }
 
 .main-menu-item:hover {
   color: #18CFAB;
-  border-bottom: 2px solid;
   border-bottom-color: #18CFAB;
 }
 
@@ -147,6 +147,7 @@ h1 {
 
 .greet-text {
   color: #18CFAB;
+  cursor: pointer;
 }
 
 .white-text {
@@ -292,6 +293,7 @@ h1 {
   background-color: #F8FCFE;
   padding: 25px 16px;
   text-align: center;
+  cursor: pointer;
 }
 
 .tabs-title:hover {
@@ -381,7 +383,8 @@ h1 {
   padding: 7px 23px 6px;
   border: 1px solid#DADADA;
   outline: none;
-  background-color: rgba(0, 0, 0, 0.0001);;
+  background-color: rgba(0, 0, 0, 0.0001);
+  cursor: pointer;
 }
 
 .filter-button.active {
@@ -743,6 +746,13 @@ h1 {
   border-radius: 50%;
   display: none;
   transform-style: preserve-3d;
+  height: 142px;
+  width: 142px;
+  overflow: hidden;
+}
+
+.enlarged-photo-item img {
+  object-fit: cover;
 }
 
 .slider-wrapper {
